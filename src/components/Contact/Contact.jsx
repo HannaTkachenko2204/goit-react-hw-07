@@ -2,14 +2,10 @@ import css from "./Contact.module.css";
 import { FaUser } from "react-icons/fa";
 import { MdLocalPhone } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
-
-  // const deleteContact = (id) => {
-  //   setContacts((contacts) => contacts.filter((contact) => contact.id !== id));
-  // };
 
   const handleClickDelete = () => dispatch(deleteContact(id));
 
@@ -17,11 +13,11 @@ const Contact = ({ name, number, id }) => {
     <div className={css.item}>
       <div>
         <p>
-          <FaUser />
+          <FaUser className={css.icon}/>
           {name}
         </p>
         <p>
-          <MdLocalPhone />
+          <MdLocalPhone className={css.icon}/>
           {number}
         </p>
       </div>

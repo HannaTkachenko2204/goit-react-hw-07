@@ -3,6 +3,10 @@
     gap: 20px;
     align-items: center;
     border: 1px solid black;
-    width: 250px;
+    width: 300px;
     justify-content: space-evenly;
 }
+
+.icon {
+    margin-right: 10px;
+  }
