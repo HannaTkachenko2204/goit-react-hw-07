@@ -13,8 +13,8 @@ const validationShema = Yup.object().shape({
     .required("Field must be filled in"),
   number: Yup.string()
     .matches(
-      /^[0-9]{3}-[0-9]{2}-[0-9]{2}$/,
-      "Phone must be in format: XXX-XX-XX"
+      /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
+      "Phone must be in format: XXX-XXX-XXXX"
     )
     .required("Field must be filled in"),
 });
