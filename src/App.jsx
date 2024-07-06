@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "./redux/contactsOps";
 import Loader from "./components/Loader/Loader";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ function App() {
       {error && toast.error("Something wrong!")}
       {loading && <Loader />}
       <ContactList />
+      <Toaster />
     </div>
   );
 }
