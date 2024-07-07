@@ -6,17 +6,17 @@ import { useEffect } from "react";
 import { fetchContacts } from "./redux/contactsOps";
 import Loader from "./components/Loader/Loader";
 import toast, { Toaster } from "react-hot-toast";
+import { selectError, selectLoading } from "./redux/contactsSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector(state => state.contacts.loading);
-  const error = useSelector(state => state.contacts.error);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
-  
   useEffect(() => {
-    dispatch(fetchContacts())
-  }, [dispatch])
-  
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
     <div>
       <h1>Phonebook</h1>
